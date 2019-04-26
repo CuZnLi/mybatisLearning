@@ -15,8 +15,22 @@
         </environment>
     </environments>
 
+    <!--<mappers>-->
+        <!--<mapper resource="sqlmap/User.xml"/>-->
+        <!--<mapper resource="sqlmap/UserMapper.xml"/>-->
+    <!--</mappers>-->
+    <!--&lt;!&ndash;通过mapper接口加载单个映射配置文件&ndash;&gt;-->
+    <!--&lt;!&ndash;遵循一定的规范：需要将mapper接口类名和mapper.xml映射文件名保持一致，且在一个目录中&ndash;&gt;-->
+    <!--&lt;!&ndash;上边规范的前提：使用mapper代理方法&ndash;&gt;-->
     <mappers>
-        <mapper resource="sqlmap/User.xml"/>
+        <mapper class="com.mybatis.mapper.UserMapper"/>
     </mappers>
 
+    <!-- 批量加载映射配置文件,mybatis自动扫描包下面的mapper接口进行加载
+      遵循一定的规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在一个目录中；
+          上边规范的前提是：使用的是mapper代理方法;
+    -->
+    <!--<mappers>-->
+        <!--<package name="com.mybatis.mapper"/>-->
+    <!--</mappers>-->
 </configuration>
